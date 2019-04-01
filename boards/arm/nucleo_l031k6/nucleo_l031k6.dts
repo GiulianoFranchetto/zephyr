@@ -1,0 +1,50 @@
+/*
+ * Copyright (c) 2018 INTELLINIUM <giuliano.franchetto@intellinium.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+#include <st/l0/stm32l031Xz.dtsi>
+
+/ {
+	model = "STMicroelectronics STM32L031K6-NUCLEO board";
+	compatible = "st,stm32l031k6-nucleo", "st,stm32l031";
+	
+	chosen {
+		//zephyr,console = &usart2;
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+		green_led_3: led_3 {
+			gpios = <&gpiob 3 GPIO_INT_ACTIVE_HIGH>;
+			label = "User LD3";
+		};
+	};
+
+	aliases {
+		led0 = &green_led_3;
+	};
+};
+
+&usart2_pins_a {
+	rx_tx {
+		rx = <STM32_PIN_PA10 (STM32_PINMUX_ALT_FUNC_4 | STM32_PUPDR_NO_PULL)>;
+		tx = <STM32_PIN_PA9 (STM32_PINMUX_ALT_FUNC_4 | STM32_PUSHPULL_NOPULL)>;
+	};
+};
+
+&usart2 {
+	current-speed = <115200>;
+	pinctrl-0 = <&usart2_pins_a>;
+	pinctrl-names = "default";
+	status = "ok";
+};
+
+&i2c1 {
+	status = "ok";
+	clock-frequency = <I2C_BITRATE_FAST>;
+};

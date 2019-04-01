@@ -1,0 +1,10 @@
+# Kconfig - STM32 Nucleo development board with STM32L031K6 MCU configuration
+#
+# Copyright (c) 2018 INTELLINIUM <giuliano.franchetto@intellinium.com>
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+config BOARD_NUCLEO_L031K6
+	bool "NUCLEO-32 L031K6 Development Board"
+	depends on SOC_STM32L031XZ

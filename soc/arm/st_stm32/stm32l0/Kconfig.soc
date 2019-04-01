@@ -1,7 +1,8 @@
 # Kconfig - ST Microelectronics STM32L0 MCU line
 #
 # Copyright (c) 2018 Endre Karlson <endre.karlson@gmail.com>
-#
+# Copyright (c) 2018INTELLINIUM <giuliano.franchetto@intellinium.com>
+
 # SPDX-License-Identifier: Apache-2.0
 #
 
@@ -11,6 +12,12 @@ depends on SOC_SERIES_STM32L0X
 
 config SOC_STM32L053X8
 	bool "STM32L053X8"
+
+config SOC_STM32L031XZ
+	bool "STM32L031XZ"
+	
+config SOC_STM32L071XZ
+	bool "STM32L071XZ"
 
 config SOC_STM32L072XZ
 	bool "STM32L072XZ"
