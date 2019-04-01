@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 Ilya Tagunov <tagunil@gmail.com>
+ * Copyright (c) 2018 INTELLINIUM <giuliano.franchetto@intellinium.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
